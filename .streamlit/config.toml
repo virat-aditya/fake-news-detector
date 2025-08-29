@@ -1,7 +1,37 @@
-[theme]
-primaryColor="#F63366"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
-font="sans serif"
+[global]
+# Prevent the app from running in development mode
+developmentMode = false
 
+[server]
+# Set the port (Streamlit Cloud handles this automatically, but good to have)
+port = 8501
+# Enable CORS for better compatibility
+enableCORS = false
+# Allow WebSocket compression for better performance
+enableWebsocketCompression = true
+# Increase max upload size if needed for large text inputs
+maxUploadSize = 200
+
+[browser]
+# Automatically open browser (doesn't apply in Cloud but good for local dev)
+gatherUsageStats = false
+
+[theme]
+# Optional: Set a custom theme
+# primaryColor = "#FF6B6B"
+# backgroundColor = "#FFFFFF" 
+# secondaryBackgroundColor = "#F0F2F6"
+# textColor = "#262730"
+# font = "sans serif"
+
+[client]
+# Show error details in production (you might want to set this to false for production)
+showErrorDetails = true
+# Disable toolbar in production for cleaner look
+toolbarMode = "minimal"
+
+[runner]
+# Automatically rerun when files change (mainly for development)
+fastReruns = true
+# Enable enforcement of Streamlit's serialization requirements
+enforceSerializableSessionState = true
